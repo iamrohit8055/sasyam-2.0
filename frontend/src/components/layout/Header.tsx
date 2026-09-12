@@ -60,19 +60,30 @@ export const Header: React.FC<HeaderProps> = ({
             <Menu className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#173B2A] flex items-center justify-center text-white shadow-sm">
+          <button
+            onClick={() => {
+              const role = user?.role || currentRole;
+              if (role === 'BUYER') navigate('/buyer/dashboard');
+              else if (role === 'TRANSPORTER') navigate('/transporter/dashboard');
+              else if (role === 'PROCESSOR') navigate('/processor/dashboard');
+              else if (role === 'ADMIN') navigate('/admin/dashboard');
+              else navigate('/farmer/dashboard');
+            }}
+            className="flex items-center gap-2.5 hover:opacity-80 transition cursor-pointer text-left focus:outline-none group"
+            title="Go to Dashboard"
+          >
+            <div className="w-9 h-9 rounded-xl bg-[#173B2A] flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
               <Sprout className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
-              <span className="text-xl font-black tracking-tight text-[#173B2A] font-sans">
+              <span className="text-xl font-black tracking-tight text-[#173B2A] font-sans group-hover:text-[#2F6B45] transition-colors">
                 SASYAM
               </span>
               <span className="hidden sm:inline-block ml-2 text-[10px] uppercase font-bold tracking-widest text-[#2F6B45] bg-[#DCE9D8] px-1.5 py-0.5 rounded">
                 Agri Intelligence
               </span>
             </div>
-          </div>
+          </button>
         </div>
 
         {/* Center: Search Bar */}

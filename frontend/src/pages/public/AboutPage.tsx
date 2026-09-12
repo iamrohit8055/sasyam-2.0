@@ -10,11 +10,11 @@ export const AboutPage: React.FC = () => {
       {/* Header Navigation */}
       <header className="bg-white border-b border-[#173B2A]/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#173B2A] flex items-center justify-center text-white shadow-md">
+          <Link to="/farmer/dashboard" className="flex items-center gap-3 hover:opacity-85 transition group" title="Go to Dashboard">
+            <div className="w-10 h-10 rounded-2xl bg-[#173B2A] flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
               <Sprout className="w-6 h-6 text-emerald-400" />
             </div>
-            <span className="text-2xl font-black text-[#173B2A]">SASYAM</span>
+            <span className="text-2xl font-black text-[#173B2A] group-hover:text-[#2F6B45] transition-colors">SASYAM</span>
           </Link>
           <div className="flex items-center gap-3">
             <Link to="/">
